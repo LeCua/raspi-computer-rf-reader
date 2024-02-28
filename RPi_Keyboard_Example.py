@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+NULL_CHAR = chr(0)
 # https://randomnerdtutorials.com/raspberry-pi-zero-usb-keyboard-hid/
 def write_report(report):
     with open('/dev/hidg0', 'rb+') as fd:
