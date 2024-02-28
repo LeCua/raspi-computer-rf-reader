@@ -9,6 +9,6 @@ print("Listening for events [2]...")
 for event in dev.read_loop():
     print("xxxxxxxxxxx")
     print(event)
-    if event.type == event.type.EV_KEY:
-        print(f"Key: {event.name}, State: {event.value}")
+    # if event.type == event.type.EV_KEY:
+    #     print(f"Key: {event.name}, State: {event.value}")
 print("Listening for events [3]...")
