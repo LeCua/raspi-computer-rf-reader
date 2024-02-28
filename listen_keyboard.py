@@ -3,7 +3,7 @@ from evdev import InputDevice, categorize, ecodes
 
 # Replace "/dev/input/event3" with the actual device path from your system
 dev = InputDevice("/dev/input/event3")
-
+print(ecodes.KEY)
 async def read_input():
     input_string = ""
     for event in dev.async_read_loop():
