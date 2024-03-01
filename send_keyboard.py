@@ -82,6 +82,7 @@ def send_text_with_enter(text):
        write_report(NULL_CHAR * 8)  # Release keys
 
 if __name__ == '__main__':
-   send_text_with_enter("Hello, world!")
-   send_text_with_enter(" ")  # Sends nothing (empty string after stripping)
-   send_text_with_enter("  This is a test  ")  # Sends "This is a test"
+    send_text_with_enter("AaBdCCC")  # Sends "This is a test"
+#    send_text_with_enter("Hello, world!")
+#    send_text_with_enter(" ")  # Sends nothing (empty string after stripping)
+#    send_text_with_enter("  This is a test  ")  # Sends "This is a test"
