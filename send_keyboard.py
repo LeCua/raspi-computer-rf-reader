@@ -74,7 +74,7 @@ def send_text_with_enter(text):
    if text:
        for char in text:
             if char.isupper():
-                write_report(chr(32)+NULL_CHAR+chr(ord(char) - 93)+NULL_CHAR*5)
+                write_report(chr(32)+NULL_CHAR+chr(ord(char.lower()) - 93)+NULL_CHAR*5)
             else:                  
                 write_report(NULL_CHAR * 2 + chr(ord(char) - 93) + NULL_CHAR * 5)
                 write_report(NULL_CHAR * 8)  # Release keys
