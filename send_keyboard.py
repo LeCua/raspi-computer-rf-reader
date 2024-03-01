@@ -82,15 +82,13 @@ def write_char(char):
     elif char == '/':    
         write_report(NULL_CHAR * 2 + chr(56) + NULL_CHAR * 5)                
     elif char == '-':    
-        write_report(NULL_CHAR * 2 + chr(86) + NULL_CHAR * 5)                
+        write_report(NULL_CHAR * 2 + chr(45) + NULL_CHAR * 5)                
     elif char == '_':    
-        write_report(chr(32)+NULL_CHAR + chr(86) + NULL_CHAR * 5)                
+        write_report(chr(32)+NULL_CHAR + chr(45) + NULL_CHAR * 5)                
     elif char == '+':    
         write_report(NULL_CHAR * 2 + chr(87) + NULL_CHAR * 5)                        
     elif char == '.':    
-        write_report(NULL_CHAR * 2 + chr(99) + NULL_CHAR * 5)                        
-    elif char == '=':    
-        write_report(NULL_CHAR * 2 + chr(103) + NULL_CHAR * 5)                        
+        write_report(NULL_CHAR * 2 + chr(99) + NULL_CHAR * 5)                            
     else:                  
         write_report(NULL_CHAR * 2 + chr(ord(char) - 93) + NULL_CHAR * 5)   
 def send_text_with_enter(text):
@@ -108,7 +106,7 @@ def send_text_with_enter(text):
        write_report(NULL_CHAR * 8)  # Release keys
 
 if __name__ == '__main__':
-    send_text_with_enter("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789[]\\/-_+.=")  # Sends "This is a test"
+    send_text_with_enter("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789[]\\/-_+.")  # Sends "This is a test"
 #    send_text_with_enter("Hello, world!")
 #    send_text_with_enter(" ")  # Sends nothing (empty string after stripping)
 #    send_text_with_enter("  This is a test  ")  # Sends "This is a test"
