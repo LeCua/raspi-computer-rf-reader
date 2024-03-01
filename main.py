@@ -5,14 +5,16 @@ from get_prisoner_code import get_prisoner_code
 
 async def main():
     while True:  # Infinite loop to continuously read input
-        card_code = await read_input()
-        if card_code:
+        # card_code = await read_input()
+        card_code = "4170614442"
+        if card_code:                        
             print("Card:", card_code)
             prisoner_code = await get_prisoner_code(card_code)
             print("Prisoner:", prisoner_code)
             send_text_with_enter(prisoner_code)
             print("Send!")
             print("")
+            break
 
 if (__name__ == "__main__"):
     # Run the main asynchronous function
