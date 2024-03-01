@@ -16,13 +16,22 @@ def send_key_report(key_code, modifier=0):
         time.sleep(0.1)  # Add a small delay to simulate key press
         write_report(release_report)
 
+# def send_text(text):
+#     for char in text:
+#         if char.isupper():
+#             send_key_report(ord(char.lower()), 2)  # Press SHIFT key
+#             send_key_report(ord(char.lower()), 0)  # Release SHIFT key and press the character key
+#         else:
+#             send_key_report(ord(char))
 def send_text(text):
     for char in text:
+        modifier = 0
         if char.isupper():
-            send_key_report(ord(char.lower()), 2)  # Press SHIFT key
-            send_key_report(ord(char.lower()), 0)  # Release SHIFT key and press the character key
-        else:
-            send_key_report(ord(char))
+            modifier = 2  # Set modifier to 2 for uppercase letters
+            char = char.lower()
+        elif char.isdigit():
+            modifier = 4  # Set modifier to 4 for numbers
+        send_key_report(ord(char), modifier)
 
 def send_enter_key():
     send_key_report(40)  # Press RETURN/ENTER key
