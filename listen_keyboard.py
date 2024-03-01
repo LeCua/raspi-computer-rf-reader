@@ -6,6 +6,7 @@ from evdev import InputDevice, categorize, ecodes
 dev = InputDevice("/dev/input/event0")
 
 async def read_input():
+    print("Listening for input...")
     input_string = ""
     for event in dev.async_read_loop():
         print(event)
