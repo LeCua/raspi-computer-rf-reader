@@ -71,19 +71,25 @@ def send_text_with_enter(text):
    """
 
    text = text.strip()
-   if text:
+   if text:      
        for char in text:
             if char.isupper():
                 write_report(chr(32)+NULL_CHAR+chr(ord(char.lower()) - 93)+NULL_CHAR*5)
-                write_report(NULL_CHAR * 8)  # Release keys
+                
+            elif char.isdigit():
+                #if == 0
+                if ord(char) == 48:
+                    write_report(NULL_CHAR * 2 + chr(39) + NULL_CHAR * 5)
+                else:
+                    write_report(NULL_CHAR * 2 + chr(ord(char) - 19) + NULL_CHAR * 5) 
             else:                  
-                write_report(NULL_CHAR * 2 + chr(ord(char) - 93) + NULL_CHAR * 5)
-                write_report(NULL_CHAR * 8)  # Release keys
+                write_report(NULL_CHAR * 2 + chr(ord(char) - 93) + NULL_CHAR * 5)        
+       write_report(NULL_CHAR * 8)  # Release keys
        write_report(NULL_CHAR * 2 + chr(40) + NULL_CHAR * 5)  # Press ENTER
        write_report(NULL_CHAR * 8)  # Release keys
 
 if __name__ == '__main__':
-    send_text_with_enter("AaBdCCC213")  # Sends "This is a test"
+    send_text_with_enter("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")  # Sends "This is a test"
 #    send_text_with_enter("Hello, world!")
 #    send_text_with_enter(" ")  # Sends nothing (empty string after stripping)
 #    send_text_with_enter("  This is a test  ")  # Sends "This is a test"
