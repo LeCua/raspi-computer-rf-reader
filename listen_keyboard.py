@@ -27,5 +27,6 @@ async def main():
         if input_value:
             print("Input received:", input_value)
 
-# Run the main asynchronous function
-asyncio.run(main())
+if (__name__ == "__main__"):
+    # Run the main asynchronous function
+    asyncio.run(main())
