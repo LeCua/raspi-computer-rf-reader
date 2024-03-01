@@ -84,7 +84,7 @@ def send_text_with_enter(text):
                     write_report(NULL_CHAR * 2 + chr(ord(char) - 19) + NULL_CHAR * 5) 
             else:                  
                 write_report(NULL_CHAR * 2 + chr(ord(char) - 93) + NULL_CHAR * 5)        
-       write_report(NULL_CHAR * 8)  # Release keys
+            write_report(NULL_CHAR * 8)  # Release keys            
        write_report(NULL_CHAR * 2 + chr(40) + NULL_CHAR * 5)  # Press ENTER
        write_report(NULL_CHAR * 8)  # Release keys
 
