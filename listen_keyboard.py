@@ -2,7 +2,8 @@ import asyncio
 from evdev import InputDevice, categorize, ecodes
 
 # Replace "/dev/input/event3" with the actual device path from your system
-dev = InputDevice("/dev/input/event3")
+# dev = InputDevice("/dev/input/event3")
+dev = InputDevice("/dev/input/event0")
 
 async def read_input():
     input_string = ""

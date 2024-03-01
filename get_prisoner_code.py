@@ -2,7 +2,7 @@ import aiohttp
 import asyncio
 
 async def get_prisoner_code(card_code):
-    url = 'http://nhixuan.nct:8000/card2prisonercode?card_code=' + card_code
+    url = 'http://nhixuan.tcn:8000/card2prisonercode?card_code=' + card_code
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(url) as response:
