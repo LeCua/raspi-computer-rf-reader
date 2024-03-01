@@ -32,6 +32,7 @@ def send_text(text):
         elif char.isdigit():
             modifier = 4  # Set modifier to 4 for numbers
         send_key_report(ord(char), modifier)
+        write_report(NULL_CHAR * 8)  # Release all keys at the end
 
 def send_enter_key():
     send_key_report(40)  # Press RETURN/ENTER key
