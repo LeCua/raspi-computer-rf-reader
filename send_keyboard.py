@@ -73,8 +73,11 @@ def send_text_with_enter(text):
    text = text.strip()
    if text:
        for char in text:
-           write_report(NULL_CHAR * 2 + chr(ord(char) - 30) + NULL_CHAR * 5)
-           write_report(NULL_CHAR * 8)  # Release keys
+            if char.isupper():
+                write_report(chr(32)+NULL_CHAR+chr(ord(char) - 97)+NULL_CHAR*5)
+            else:                  
+                write_report(NULL_CHAR * 2 + chr(ord(char) - 97) + NULL_CHAR * 5)
+                write_report(NULL_CHAR * 8)  # Release keys
        write_report(NULL_CHAR * 2 + chr(40) + NULL_CHAR * 5)  # Press ENTER
        write_report(NULL_CHAR * 8)  # Release keys
 
