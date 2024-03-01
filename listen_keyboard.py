@@ -8,6 +8,7 @@ dev = InputDevice("/dev/input/event0")
 async def read_input():
     input_string = ""
     for event in dev.async_read_loop():
+        print(event)
         if event.type == ecodes.EV_KEY:
             key_event = categorize(event)
             if key_event.keystate == key_event.key_down:
